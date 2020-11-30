@@ -950,7 +950,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1933095816}
-  - component: {fileID: 1933095815}
   - component: {fileID: 1933095814}
   m_Layer: 0
   m_Name: Singleton
@@ -973,19 +972,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1457271692}
   gameCon: {fileID: 1312129084}
---- !u!114 &1933095815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1933095813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af51d5ac6a2197b469df2acfbd26b7ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingSceneIndex: 0
 --- !u!4 &1933095816
 Transform:
   m_ObjectHideFlags: 0

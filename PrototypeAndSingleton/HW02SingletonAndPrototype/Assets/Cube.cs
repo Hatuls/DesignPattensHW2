@@ -6,6 +6,8 @@ public class Cube :TargetEnemy
 {
     private void OnCollisionEnter(Collision collision)
     {
+        Spawner.addScore();
+        Debug.Log("Object Destroyed");
         Destroy(gameObject);
     }
 

@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     public static Spawner instance;
   public TargetEnemy Enemy;
  
-    public Action addScore;
+    public static Action addScore;
 
     public float min, max;
 

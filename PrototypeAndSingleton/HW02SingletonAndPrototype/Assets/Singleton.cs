@@ -13,6 +13,7 @@ public class Singleton : MonoBehaviour
    public GameObject gameCon;
     private void Awake()
     {
+        SceneHandler.Init();
         GameObject[] GameConainters = GameObject.FindGameObjectsWithTag("GameCon");
         Debug.Log("check if there is already game container in scene");
         if (GameConainters.Length > 1)
@@ -31,7 +32,7 @@ public class Singleton : MonoBehaviour
     private void Start()
     {
 
-        SceneHandler.instance.Init();
+        
 
         Init();
 
@@ -42,7 +43,9 @@ public class Singleton : MonoBehaviour
           myCamera = Camera.main;
 
         scoreText.text = "Score: 0";
-        Spawner.instance.addScore = AddToScore;
+        Spawner.addScore = AddToScore;
+        Spawner.addScore += AddScoreText;
+       
         Spawner.instance.StartThrowTarget();
     }
 
@@ -60,7 +63,7 @@ public class Singleton : MonoBehaviour
                 Player.Instance.RotateTheCannon(rayHit.point);
             }
       }
-
+    private void AddScoreText() { Debug.Log("Added 1 point To Score"); }
 
     private void AddToScore() {
         score++;

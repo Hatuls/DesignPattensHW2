@@ -6,22 +6,19 @@ using UnityEngine.SceneManagement;
 public class SceneHandler 
 {
 
-    int startingSceneIndex=0;
+     static int startingSceneIndex=0;
 
    public static SceneHandler instance;
-     public void Init()
+     public static void Init()
     {
         if (instance == null)
         {
             instance = new SceneHandler();
         }
-        else
-        {
-            instance = this;
-        }
-        
         startingSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
+
+
     public void LoadNextScene() {
 
         startingSceneIndex = SceneManager.GetActiveScene().buildIndex;
