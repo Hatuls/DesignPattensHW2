@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneHandler : MonoBehaviour
+public class SceneHandler 
 {
 
     int startingSceneIndex=0;
 
    public static SceneHandler instance;
-    void Start()
+     public void Init()
     {
-      
-        instance = this;
+        if (instance == null)
+        {
+            instance = new SceneHandler();
+        }
+        else
+        {
+            instance = this;
+        }
+        
         startingSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
     public void LoadNextScene() {

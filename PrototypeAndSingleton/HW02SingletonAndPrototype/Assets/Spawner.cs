@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 public class Spawner : MonoBehaviour
 {
     public static Spawner instance;
-  public   targetCube targetCube;
+  public TargetEnemy Enemy;
  
     public Action addScore;
 
@@ -36,9 +36,8 @@ public class Spawner : MonoBehaviour
         while (spawnObject)
         {
             Debug.Log("Spawn cube prefa every X seconds, initiate prefab");
-            targetCube cubeObject = Instantiate(targetCube, GetRandomVector(), Quaternion.identity, this.transform);
-            cubeObject.Init();
-            cubeObject.GetSetAction = addScore;
+            TargetEnemy cubeObject = Instantiate(Enemy, GetRandomVector(), Quaternion.identity, this.transform);
+            cubeObject.Init(cubeObject.gameObject);
             yield return new WaitForSeconds(spawnBetweenTime );
             spawnBetweenTime -= 0.02f;
             if (spawnBetweenTime <0.3f)
@@ -49,7 +48,7 @@ public class Spawner : MonoBehaviour
 
     }
 
-    private Vector3 GetRandomVector()
+    public  Vector3 GetRandomVector()
     {
         Debug.Log("generate random spawning vector for the cube prefab");
         Vector3 spawnLocation;

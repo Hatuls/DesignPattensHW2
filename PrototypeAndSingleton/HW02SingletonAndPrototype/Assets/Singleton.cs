@@ -30,8 +30,8 @@ public class Singleton : MonoBehaviour
     }
     private void Start()
     {
-    
-        
+
+        SceneHandler.instance.Init();
 
         Init();
 

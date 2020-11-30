@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class targetCube : MonoBehaviour
 {
+   
     float speed = 2f;
     private Action AddScore;
     public void Init() {
@@ -34,3 +35,5 @@ public class targetCube : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
+
